@@ -1,0 +1,18 @@
+<h1>Searching for - <%= @search_term %></h1>
+
+<table>
+	<tr>
+		<th>Thumbnail</th>
+		<th>Title</th>
+		<th>Rank</th>
+	</tr>
+	<% @recipes.each do |newrecipe| %>
+		<tr>
+			<td><%= link_to image_tag(newrecipe["image_url"], size: "100"), newrecipe["f2f_url"] %></td>
+			<td><%= link_to sanitize(newrecipe["title"]), newrecipe["f2f_url"] %></td>
+			<td><%= newrecipe["social_rank"] %></td>
+		</tr>
+	<% end %>
+</table>
+<p>Powered By Food2Fork.com</p>
+
